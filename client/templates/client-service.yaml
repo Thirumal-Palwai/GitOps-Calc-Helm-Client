@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: client
+  name: client
+spec:
+  type: LoadBalancer
+  ports:
+    - name: "open"
+      port: 5000
+      targetPort: 5000
+      nodePort: 30004
+  selector:
+    app: client
